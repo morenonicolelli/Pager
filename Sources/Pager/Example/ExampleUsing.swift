@@ -16,7 +16,7 @@ struct MomoPagerView_Previews: PreviewProvider {
         PagerView(selectionBar: selection,
                   selectionColor: .red,
                   underlineColor: .black,
-                      fontType: .title
+                  fontType: .title
         )
         .previewInterfaceOrientation(.landscapeLeft)
     }

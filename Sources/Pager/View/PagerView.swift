@@ -13,7 +13,8 @@ public struct PagerView<Section: SectionWrapper>: View where Section.AllCases: R
     private let underlineColor: Color
     private let fontType: Font
     
-    public init(selectionColor: Color, underlineColor: Color, fontType: Font) {
+    public init(selectionBar: Section, selectionColor: Color, underlineColor: Color, fontType: Font) {
+        self.selectionBar = State(initialValue: selectionBar) as! Section
         self.selectionColor = selectionColor
         self.underlineColor = underlineColor
         self.fontType = fontType
