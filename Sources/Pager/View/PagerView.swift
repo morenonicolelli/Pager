@@ -8,10 +8,10 @@
 import SwiftUI
 
 public struct PagerView<Section: SectionWrapper>: View where Section.AllCases: RandomAccessCollection {
-    @State var selectionBar: Section
-    let selectionColor: Color
-    let underlineColor: Color
-    let fontType: Font
+    @State public var selectionBar: Section
+    public let selectionColor: Color
+    public let underlineColor: Color
+    public let fontType: Font
     
     var SelectionBar: some View {
         HStack{
