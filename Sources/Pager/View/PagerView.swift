@@ -13,14 +13,23 @@ public struct PagerView<Section: SectionWrapper>: View where Section.AllCases: R
     private let underlineColor: Color
     private let fontType: Font
     
-    public init<Section: SectionWrapper>(selectionBar: Section,
-                                         selectionColor: Color = .black,
-                                         underlineColor: Color = .black,
-                                         fontType: Font = .body){
-        self.selectionBar = selectionBar
-        self.underlineColor = underlineColor
+    public init(selectionColor: Color, underlineColor: Color, fontType: Font) {
         self.selectionColor = selectionColor
+        self.underlineColor = underlineColor
         self.fontType = fontType
+    }
+    
+    public var body: some View {
+        VStack(spacing: 0){
+            SelectionBar
+                TabView(selection: $selectionBar){
+                    ForEach(Section.allCases) { item in
+                        item.viewToPresent
+                            .tag(item)
+                    }
+                }
+                .pagerStyle()
+        }
     }
     
     private var SelectionBar: some View {
@@ -42,18 +51,5 @@ public struct PagerView<Section: SectionWrapper>: View where Section.AllCases: R
             }
         }
         .padding([.trailing, .leading, .top], 8)
-    }
-    
-    public var body: some View {
-        VStack(spacing: 0){
-            SelectionBar
-                TabView(selection: $selectionBar){
-                    ForEach(Section.allCases) { item in
-                        item.viewToPresent
-                            .tag(item)
-                    }
-                }
-                .pagerStyle()
-        }
     }
 }
