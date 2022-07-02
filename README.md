@@ -11,7 +11,7 @@ Simple pager to using in SwiftUI for iOS and watchOS.
 
 In Xcode:
 * File ⭢ Swift Packages ⭢ Add Package Dependency...
-* Use the URL https://github.com/fermoya/SwiftUIPager.git
+* Use the URL https://github.com/morenonicolelli/Pager
 
 ## Feedback
 If you happen to encounter any problem or you have any suggestion, please, don't hesitate to open an issue or reach out to me at [morenonicolelligmail.com](mailto: morenonicolelli@gmail.com).  
