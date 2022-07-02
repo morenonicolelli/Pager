@@ -9,11 +9,21 @@ import SwiftUI
 
 public struct PagerView<Section: SectionWrapper>: View where Section.AllCases: RandomAccessCollection {
     @State public var selectionBar: Section
-    public let selectionColor: Color
-    public let underlineColor: Color
-    public let fontType: Font
+    private let selectionColor: Color
+    private let underlineColor: Color
+    private let fontType: Font
     
-    var SelectionBar: some View {
+    public init<Section: SectionWrapper>(selectionBar: Section,
+                                         selectionColor: Color = .black,
+                                         underlineColor: Color = .black,
+                                         fontType: Font = .body){
+        self.selectionBar = selectionBar
+        self.underlineColor = underlineColor
+        self.selectionColor = selectionColor
+        self.fontType = fontType
+    }
+    
+    private var SelectionBar: some View {
         HStack{
             ForEach(Section.allCases, id: \.self) { item in
                 Text(item.id.capitalized)
