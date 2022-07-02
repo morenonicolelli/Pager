@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-protocol SectionWrapper: CaseIterable, Identifiable, Hashable  {
+public protocol SectionWrapper: CaseIterable, Identifiable, Hashable  {
     var id: String { get }
     var viewToPresent: AnyView { get }
 }

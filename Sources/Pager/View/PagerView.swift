@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PagerView<Section: SectionWrapper>: View where Section.AllCases: RandomAccessCollection {
+public struct PagerView<Section: SectionWrapper>: View where Section.AllCases: RandomAccessCollection {
     @State var selectionBar: Section
     let selectionColor: Color
     let underlineColor: Color

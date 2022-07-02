@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-extension TabView {
+public extension TabView {
     func pagerStyle() -> some View {
         self
             .edgesIgnoringSafeArea(.vertical)
