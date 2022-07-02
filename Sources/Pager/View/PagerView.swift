@@ -34,7 +34,7 @@ public struct PagerView<Section: SectionWrapper>: View where Section.AllCases: R
         .padding([.trailing, .leading, .top], 8)
     }
     
-    var body: some View {
+    public var body: some View {
         VStack(spacing: 0){
             SelectionBar
                 TabView(selection: $selectionBar){
