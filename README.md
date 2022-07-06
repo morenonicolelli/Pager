@@ -2,6 +2,8 @@
 
 Simple pager to using in SwiftUI for iOS and watchOS.
 
+In this moment I can't resolve public init problems. You can copy and paste the view if you need
+
 ## Requirements
 * iOS 14.0+
 * watchOS 8.0+
